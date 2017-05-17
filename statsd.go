@@ -84,7 +84,7 @@ func (c *Client) Count(bucket string, n interface{}) {
 }
 
 func (c *Client) skip() bool {
-	return c.muted || (c.rate != 1 && randFloat() > c.rate)
+	return nil == c || c.muted || (c.rate != 1 && randFloat() > c.rate)
 }
 
 // Increment increment the given bucket. It is equivalent to Count(bucket, 1).
